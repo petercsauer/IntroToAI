@@ -60,6 +60,9 @@ def aStar(map):
 			if i.f < minF:
 				minF = i.f
 				minFNode = i
+			elif i.f == minF:
+				if i.x<minFNode.x or i.y<minFNode.y:
+					minFNode = i
 		openNodes.remove(minFNode)
 		closedNodes.append(minFNode)
 		found = minFNode.checkEnd()
